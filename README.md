@@ -4,7 +4,7 @@ Sinyal Isleme
 Proje : MATLAB ile sentezleme
 
 frek.m : notalarýn oktav hepsaplamasýný yapar
-note.m : sinüs sinyalini verir
+note.m : sinüs sinyalini verir.zarflamayý yaptýk
 notalar.png :seçilen þarkýlarýn notalarý var
 notalar.txt :  notalarýn süreleri var
 
