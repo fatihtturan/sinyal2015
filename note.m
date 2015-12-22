@@ -1,5 +1,5 @@
 
-function [aa,bb]=note (f,dur)   %fonksiyon oluþturduk 
-bb=0:1/1000000:dur;             %frekans aralýgýný belirttik 
-aa=sin(2*pi*f*zz);              %sinüsün hesaplanma fonksiyonu  
-plot(bb,aa)                     %burdan grafiði yazdýrýyoruz 
+function[x,t]=note (frekans,vurus) %3 deðere göre sinus girafigi cizilir
+fs=8192;
+t=0:1/fs:(vurus-1/fs); %0dan dura kadar 1/(100*ff) kadar arttýrýyor.
+x=sin(2*pi*frekans*t); %girilen bilgi cikisinde sinus sinyali dondu.
