@@ -1,23 +1,35 @@
-function [C]=frek(nota,oktav)                                               %fonksiyon olusturduk arg�manlar� nota ile oktav olan
-notalar={'Do','C#','Re','Eb','Mi','Fa','F#','Sol','G#','La','Bb','Si'};     %notalar� dizilerde belirtiyoruz
-a=strcmp(notalar,nota);                                                     %�stte girilen notay� dizide buluyor
-b=find(a,1);                                                                %girilen notan�n hangi indexte oldugunu buluyor
+function [frekans]=frek(nota,oktav,oktavdegeri)%oluşturulan frek fonksiyonunda frekans değeri döndürülüyor
 
-if(nargin==0)
+notalar={'Do','Dod','Re','Mib','Mi','Fa','Fad','Sol','Sold','La','Sib','Si','Sus'}; %içinde notalar olan dizi oluşturuldu
+a=strcmp(notalar,nota); %üstteki diziden girilen notayı arar
+b=find(a,1);%üstteki fonksiyondan 1. indisli argümanı alır
+    if (nargin==0)
+disp ('veri girişi yapınız');
+        elseif (nargin==1)
+ 
+            if (b==13)
+               frekans=0;
+            else
+                
+              
+        frekans=16.35*(2^(4+oktavdegeri))*(2^((b-1)/12));%frekans fonksiyonu oktavdeğeri ile oluşturuldu
+       end
+    
+    elseif (nargin==2)
        
-                disp ('veri giriniz:')
+          if (b==13)
+               frekans=0;
+        else
+            frekans=16.35*(2^(oktav))*(2^((b-1)/12)); %frekans fonksiyonu oktav ile oluşturuldu
+          end
+    else
+        if (b==13)
+               frekans=0;
+        else
+            frekans=16.35*(2^(oktav+oktavdegeri))*(2^((b-1)/12)); %frekans fonksiyonu oktav ve oktavdeğeri ile birlikte oluşturuldu
+          end
+    end
+end 
+   
 
-else if (nargin==1)
-         if (m==13)
-             frekans=0;
-         elsa 
 
-C=round(16.35*(2^4)*(2^((b-1)/12)));                                    %say�y� en yak�n de�ere kayd�rma
-
-        end
-     else
-        if (m==13)
-             frelans=0;
-        else frekans C=round(16.35*(2^4)*(2^((b-1)/12)));
-        end
-end
